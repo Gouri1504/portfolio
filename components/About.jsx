@@ -1,7 +1,45 @@
-import { assets, infoList, toolsData } from '@/assets/assets'
+import { assets } from '@/assets/assets'
 import Image from 'next/image'
 import React from 'react'
 import { motion } from "motion/react"
+
+const skillCategories = [
+  {
+    label: 'LANGUAGES',
+    icon: '>_',
+    skills: ['Python', 'C++', 'JavaScript', 'TypeScript'],
+  },
+  {
+    label: 'FRONTEND',
+    icon: '</>',
+    skills: ['React', 'Next.js', 'Tailwind CSS', 'HTML5', 'CSS3'],
+  },
+  {
+    label: 'BACKEND',
+    icon: '{}',
+    skills: ['Node.js', 'Express.js', 'REST APIs'],
+  },
+  {
+    label: 'DATABASES',
+    icon: '[]',
+    skills: ['PostgreSQL', 'MongoDB', 'Firebase'],
+  },
+  {
+    label: 'AI & GENERATIVE AI',
+    icon: '~>',
+    skills: ['LLM Integration', 'Prompt Engineering', 'Google Gemini API'],
+  },
+  {
+    label: 'CLOUD & DEVOPS',
+    icon: '#!',
+    skills: ['AWS (EC2, S3, Lambda, API Gateway)', 'GCP (Compute Engine)', 'CI/CD Pipelines'],
+  },
+  {
+    label: 'DEVELOPER TOOLS',
+    icon: '$>',
+    skills: ['Git', 'GitHub', 'Postman', 'VS Code', 'PyCharm', 'Figma'],
+  },
+]
 
 const About = ({isDarkMode}) => {
   return (
@@ -10,79 +48,81 @@ const About = ({isDarkMode}) => {
     whileInView={{opacity: 1}}
     transition={{duration: 1}}
     >
-
-
-      <motion.h2 
+      <motion.h2
       initial={{opacity: 0, y: -20}}
       whileInView={{opacity: 1, y: 0}}
       transition={{duration: 0.5, delay: 0.5}}
       className='text-center text-5xl font-Ovo'>
-        About me</motion.h2>
+        About Me</motion.h2>
 
-        <motion.div 
+      <motion.div
+      initial={{opacity: 0}}
+      whileInView={{opacity: 1}}
+      transition={{duration: 0.8}}
+      className='flex w-full flex-col lg:flex-row items-start gap-16 my-16'>
+        <motion.div
+        initial={{opacity: 0, scale: 0.9}}
+        whileInView={{opacity: 1, scale: 1}}
+        transition={{duration: 0.6}}
+        className='w-64 sm:w-80 rounded-3xl max-w-none shrink-0 lg:sticky lg:top-28'>
+          <Image src={assets.user_image} alt='user' className='w-full rounded-3xl'/>
+        </motion.div>
+
+        <motion.div
         initial={{opacity: 0}}
         whileInView={{opacity: 1}}
-        transition={{duration: 0.8}}
-        className='flex w-full flex-col lg:flex-row items-center gap-20 my-20'>
-            <motion.div
-            initial={{opacity: 0, scale: 0.9}}
-            whileInView={{opacity: 1, scale: 1}}
-            transition={{duration: 0.6}}
-            className='w-64 sm:w-80 rounded-3xl max-w-none'>
-                <Image src={assets.user_image} alt='user' className='w-full rounded-3xl'/>
-            </motion.div>
-            <motion.div 
-            initial={{opacity: 0}}
-            whileInView={{opacity: 1}}
-            transition={{duration: 0.6, delay: 0.8}}
-            className='flex-1'>
-                <p className='mb-10 max-w-2xl font-Ovo'
-                >I am a third-year computer science student at Chitkara University with a strong foundation in C++, Python,
-                MERN stack, HTML, CSS, and JavaScript. I am passionate about learning and innovation, actively engaging in
-                projects to implement solutions and overcome challenges. My experience has also helped me develop strong
-                communication and collaboration skills. I am eager to apply my technical expertise and enthusiasm to contribute to
-                impactful projects while continuing to grow professionally.
-                </p>
+        transition={{duration: 0.6, delay: 0.8}}
+        className='flex-1'>
+          <div className='space-y-4 max-w-2xl font-Ovo text-gray-700 dark:text-white/85 mb-12'>
+            <p>
+              A Computer Science student and former Software Engineering Intern at Aarogya ID with hands-on experience building AI-powered workflows, backend services, and full-stack applications.
+            </p>
+            <p>
+              During my internship, I worked on LLM-driven data extraction systems, cloud-based backend services, and AI chatbot functionality, gaining practical exposure to how production-grade AI systems are built and deployed.
+            </p>
+            <p>
+              I am particularly interested in backend development, distributed systems, and full-stack engineering. I enjoy building projects, learning new technologies, and strengthening my fundamentals.
+            </p>
+            <p>
+              My goal is to grow as a software engineer by gaining practical experience and contributing to meaningful software systems.
+            </p>
+          </div>
 
-                <motion.ul
-                initial={{opacity: 0}}
-                whileInView={{opacity: 1}}
-                transition={{duration: 0.8, delay: 1}}
-                className='grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl'>
-                    {infoList.map(({icon, iconDark, title, description}, index)=>(
-                        <motion.li 
-                        whileHover={{scale: 1.05}}
-                        className='border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50'
-                         key={index}>
-                            <Image src={isDarkMode ? iconDark : icon} alt={title} className='w-7 mt-3'/>
-                            <h3 className='my-4 font-semibold text-gray-700 dark:text-white'>{title}</h3>
-                            <p className='text-gray-600 text-sm dark:text-white/80'>{description}</p>
-                        </motion.li>
+          <motion.div
+          initial={{opacity: 0, y: 30}}
+          whileInView={{opacity: 1, y: 0}}
+          transition={{duration: 0.6, delay: 1}}
+          className='border border-gray-300 dark:border-white/20 rounded-2xl p-6 sm:p-8 bg-white/50 dark:bg-white/5 backdrop-blur-sm'>
+            <div className='flex items-center gap-3 mb-6'>
+              <span className='text-2xl font-mono font-bold text-gray-800 dark:text-white'>&lt;/&gt;</span>
+              <h3 className='text-xl font-semibold text-gray-800 dark:text-white font-Ovo'>Technical Skills</h3>
+            </div>
+
+            <div className='space-y-5'>
+              {skillCategories.map((category) => (
+                <div key={category.label}>
+                  <div className='flex items-center gap-2 mb-2'>
+                    <span className='text-xs font-mono text-gray-500 dark:text-white/40'>{category.icon}</span>
+                    <span className='text-xs font-semibold tracking-widest text-gray-500 dark:text-white/50 uppercase'>
+                      {category.label}
+                    </span>
+                  </div>
+                  <div className='flex flex-wrap gap-2'>
+                    {category.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className='px-3 py-1.5 text-sm rounded-full border border-gray-300 dark:border-white/20 bg-gray-50 dark:bg-white/10 text-gray-700 dark:text-white/80 hover:bg-gray-100 dark:hover:bg-white/15 transition-colors duration-200'
+                      >
+                        {skill}
+                      </span>
                     ))}
-                </motion.ul>
-
-                <motion.h4
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ delay: 1.3, duration: 0.5 }}
-                className='my-7 text-gray-800 font-Ovo dark:text-white/80'>Tools I use</motion.h4>
-
-                <motion.ul
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 1.5, duration: 0.6 }}
-                className='flex items-center gap-3 sm:gap-5'>
-                    {toolsData.map((tool, index)=>(
-                        <motion.li 
-                        whileHover={{ scale: 1.1 }}
-                        className='flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500'
-                         key={index}>
-                            <Image src={tool} alt='Tool' className='w-5 sm:w-7'/>
-                        </motion.li>
-                    ))}
-                </motion.ul>
-            </motion.div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </motion.div>
+      </motion.div>
     </motion.div>
   )
 }
