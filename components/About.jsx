@@ -37,7 +37,7 @@ const About = ({isDarkMode}) => {
             transition={{duration: 0.6, delay: 0.8}}
             className='flex-1'>
                 <p className='mb-10 max-w-2xl font-Ovo'
-                >I am a second-year computer science student at Chitkara University with a strong foundation in C++, Python,
+                >I am a third-year computer science student at Chitkara University with a strong foundation in C++, Python,
                 MERN stack, HTML, CSS, and JavaScript. I am passionate about learning and innovation, actively engaging in
                 projects to implement solutions and overcome challenges. My experience has also helped me develop strong
                 communication and collaboration skills. I am eager to apply my technical expertise and enthusiasm to contribute to

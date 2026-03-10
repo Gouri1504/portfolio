@@ -24,14 +24,14 @@ const Header = () => {
     whileInView={{y: 0, opacity: 1}}
     transition={{duration: 0.8, delay: 0.5}}
     className='text-3xl sm:text-6xl lg:text-[66px] font-Ovo'>
-        MERN Stack Developer & UI/UX Enthusiast</motion.h1>
+        Full Stack & AI Engineer</motion.h1>
 
         <motion.p
         initial={{opacity: 0}}
         whileInView={{opacity: 1}}
         transition={{duration: 0.6, delay: 0.7}}
         className='max-w-2xl mx-auto font-Ovo'>
-A second-year CS student passionate about building full-stack applications and crafting intuitive user experiences with MERN and UI/UX design.        </motion.p>
+A Full Stack Developer building AI-powered web applications and scalable systems        </motion.p>
 
         <div className='flex flex-col sm:flex-row items-center gap-4 mt-4'>
             <motion.a 
