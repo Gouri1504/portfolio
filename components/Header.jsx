@@ -46,7 +46,7 @@ A Full Stack Developer building AI-powered web applications and scalable systems
             initial={{y: 30, opacity: 0}}
             whileInView={{y: 0, opacity: 1}}
             transition={{duration: 0.6, delay: 1.2}}
-            href="https://drive.google.com/file/d/1U5gVCAmyKVOoRvRuwoXZ6w4XEzqn5SoE/view?usp=drive_link" download 
+            href="https://drive.google.com/file/d/1z9crAHjsgM7fr7lHdy1BTFwMhXMys0Zz/view?usp=drive_link" download 
             className='px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 bg-white dark:text-black'>
                 my resume <Image src={assets.download_icon} alt='' className='w-4'/></motion.a>
         </div>
